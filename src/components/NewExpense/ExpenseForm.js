@@ -6,13 +6,13 @@ const ExpenseForm = () => {
   const [enteredAmount, setEnteredAmonut] = useState("");
   const [enteredDate, setEnteredDate] = useState("");
 
-  const titleHandler = (event) => {
+  const titleChangeHandler = (event) => {
     setEnteredTitle(event.target.value);
   };
-  const amountHandler = (event) => {
+  const amountChangeHandler = (event) => {
     setEnteredAmonut(event.target.value);
   };
-  const dateHandler = (event) => {
+  const dateChangeHandler = (event) => {
     setEnteredDate(event.target.value);
   };
 
@@ -34,7 +34,11 @@ const ExpenseForm = () => {
       <div className="new-expense__controls">
         <div className="new-expense__control">
           <label>Title</label>
-          <input type="text" value={enteredTitle} onChange={titleHandler} />
+          <input
+            type="text"
+            value={enteredTitle}
+            onChange={titleChangeHandler}
+          />
         </div>
         <div className="new-expense__control">
           <label>Amount</label>
@@ -43,7 +47,7 @@ const ExpenseForm = () => {
             min="0.01"
             step="0.01"
             value={enteredAmount}
-            onChange={amountHandler}
+            onChange={amountChangeHandler}
           />
         </div>
         <div className="new-expense__control">
@@ -53,7 +57,7 @@ const ExpenseForm = () => {
             min="2019-01-01"
             max="2022-12-31"
             value={enteredDate}
-            onChange={dateHandler}
+            onChange={dateChangeHandler}
           />
         </div>
       </div>
